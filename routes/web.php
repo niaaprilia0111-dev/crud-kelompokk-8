@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MenuKantinController;
 
+Route::resource('menu-kantins', MenuKantinController::class);
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('menu-kantins.index');
 });
