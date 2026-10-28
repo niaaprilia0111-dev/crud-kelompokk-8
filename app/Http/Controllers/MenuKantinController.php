@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\MenuKantin;
 class MenuKantinController extends Controller
 {
     /**
@@ -85,10 +85,10 @@ class MenuKantinController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(MenuKantin $menuKantin)
-    {
-        $menuKantin->delete();
+{
+    $menuKantin->delete();
 
-        return redirect()->route('menu-kantins.index')
-        ->with('seccess', 'Menu kantin berhasil dihapus!');
-    }
+    return redirect()->route('menu-kantins.index')
+        ->with('success', 'Menu kantin berhasil dihapus!');
+}
 }

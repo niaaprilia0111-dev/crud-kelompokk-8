@@ -5,9 +5,6 @@ namespace Database\Factories;
 use App\Models\MenuKantin;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends Factory<MenuKantin>
- */
 class MenuKantinFactory extends Factory
 {
     /**

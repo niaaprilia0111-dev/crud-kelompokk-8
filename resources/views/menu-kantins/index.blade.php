@@ -12,11 +12,16 @@
             <div class="col-md-12">
                 <h2 class="mb-4">Daftar Menu Kantin (Kelompok 8)</h2>
 
-                @if(session('success'))
-                    <div class="alert alert-success">{{ session('success') }}</div>
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                 @endif
 
-                <a href="{{ route('menu-kantins.create') }}" class="btn btn-primary mb-3">Tambah Menu Baru</a>
+                <a href="{{ route('menu-kantins.create') }}" class="btn btn-primary mb-3">
+                    Tambah Menu Baru
+                </a>
 
                 <div class="card shadow-sm">
                     <div class="card-body">
@@ -49,7 +54,8 @@
                                         </td>
                                         <td>
                                             <a href="{{ route('menu-kantins.edit', $menu->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                            <form action="{{ route('menu-kantins.destroy', $menu->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                                            <form action="{{ route('menu-kantins.destroy', $menu->id) }}" method="POST" class="d-inline"
+                                                 onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit">Hapus</button>
